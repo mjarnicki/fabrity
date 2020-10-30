@@ -1,0 +1,19 @@
+.header{
+    &__title{
+        font-size: 2rem;
+    }
+    &__bottom{
+        font-size: 20px;
+    }
+}
+
+body{
+    background-color: yellow;
+}
+
+.other-class{
+    display: contents;
+    transition: all .5s;
+    box-shadow: 5px 10px;
+    background: linear-gradient(to bottom, white, black);
+  }
