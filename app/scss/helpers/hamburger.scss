@@ -1,0 +1,41 @@
+.hamburger{
+    &__container{
+        width: 24px;
+        height: 24px;
+        position: relative;
+        transition: transform 2s linear, width 2s linear;
+        &:hover, &:focus{
+            .hamburger__line--1{
+                transform: translateY(-1.5px) rotate(45deg);
+                width: 107%;
+                transform-origin: 0% 100%;
+            }
+            .hamburger__line--2{
+                transform: scaleX(0);
+            }
+            .hamburger__line--3{
+                transform: translateY(1.5px) rotate(-45deg);
+                width: 107%;
+                transform-origin: 0% 0%;
+            }
+        }
+    }
+    &__line{
+        position: absolute;
+        left: 10%;
+        height: 10%;
+        width: 80%;
+        border-radius: 2px;
+        transition: all 0.3s linear;
+        background-color: black;
+        &--1{
+            top: 14.25%;
+        }
+        &--2{
+            top: 47.5%;
+        }
+        &--3{
+            top: 80.75%;
+        }
+    }
+}

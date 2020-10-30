@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import "helpers/hamburger.scss";
+
+
+// File to set global css settings and import scss files from other sections in right order
+
+$black: #272727;
+$blue-light: #F7F9FB;
+$gray: #7D7C83;
+$orange: #F49E4C;
+$orange-dark: #E06D00;
+$red: #EB5757;
+$blue: #118AB2;
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+ul, li{
+    list-style-type: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+body{
+    font-family: OpenSans;
+    display: flex;
+    justify-content: center;
+}
+
+@function rem-calc($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
+
+// import files from sections
+
+@import "sections/header.scss";
+

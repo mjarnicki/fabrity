@@ -9,18 +9,18 @@ const autoprefixer = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
 const del = require('del');
-const cache = require('gulp-cache');
 
 // OPTIMIZING TASKS
 
 gulp.task('css', function() {
-  return gulp.src('app/scss/**/*.scss')
+  return gulp.src('app/scss/global.scss')
     .pipe(sass())
-    .pipe(cssnano())
+    // css nano commented for debugging
+    // .pipe(cssnano())
     .pipe(concat('styles.css'))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 });
 
 gulp.task('script', function () {
@@ -30,7 +30,8 @@ gulp.task('script', function () {
           presets: ['@babel/env']
       }))
       .pipe(concat('scripts.js'))
-      .pipe(uglify())
+    // css uglify commented for debugging
+      // .pipe(uglify())
       .pipe(gulp.dest('dist/js'))
       .pipe(browserSync.stream());
 });

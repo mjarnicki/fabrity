@@ -5,11 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/dist/css/styles.css">
-    
+
     <script src="/dist/js/scripts.js"></script>
+
+    <style>
+        @font-face {
+            font-family: OpenSans;
+            src: url('/dist/fonts/OpenSans-Regular.ttf');
+            font-weight: 400;
+          }
+        @font-face {
+            font-family: OpenSans;
+            src: url('/dist/fonts/OpenSans-Bold.ttf');
+            font-weight: 700;
+          }
+    </style>
 
 </head>
 <body>
-    <h1>Hello world tekst</h1>
+
+    <header class="header__container">
+        <h1 class="header__title">
+            <img src="/app/images/tag.svg" alt="ikona">
+            <span class="d-none d-md-block ml-2">
+                Front-end
+            </span>
+        </h1>
+        <nav class="header__nav-container">
+            <ul class="header__desktop-list-container d-none d-md-flex">
+                <li>
+                    <a href="#news">
+                        Wiadomości
+                    </a> 
+                </li>
+                <li>
+                    <a href="#technologies">
+                        Technologie
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger__container">
+                <div class="hamburger__line hamburger__line--1"></div>
+                <div class="hamburger__line hamburger__line--2"></div>
+                <div class="hamburger__line hamburger__line--3"></div>
+            </button>
+        </nav>
+    </header>
+
 </body>
 </html> 
