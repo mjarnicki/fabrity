@@ -12,7 +12,7 @@ const del = require('del');
 
 // OPTIMIZING TASKS
 
-gulp.task('css', function() {
+gulp.task('css', () => {
   return gulp.src('app/scss/global.scss')
     .pipe(sass())
     // css nano commented for debugging
@@ -23,7 +23,7 @@ gulp.task('css', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('script', function () {
+gulp.task('script', () => {
   return gulp.src('app/js/**/*.js')
       .pipe(plumber())
       .pipe(babel({
@@ -36,7 +36,7 @@ gulp.task('script', function () {
       .pipe(browserSync.stream());
 });
 
-gulp.task('images', function(){
+gulp.task('images', () => {
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(imagemin({
       interlaced: true
@@ -44,14 +44,14 @@ gulp.task('images', function(){
   .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', () => {
   return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
 })
 
 // PROCESSING TASKS
 
-gulp.task('browserSync', function(cb) {
+gulp.task('browserSync', cb => {
   browserSync.init({
     server: {
       baseDir: './'
@@ -60,14 +60,14 @@ gulp.task('browserSync', function(cb) {
   cb();
 });
 
-gulp.task('watch', (cb) => {
+gulp.task('watch', cb => {
   gulp.watch('app/scss/**/*.scss', gulp.series('css')); 
   gulp.watch('app/js/**/*.js', gulp.series('script')); 
   gulp.watch('*.html', reload); 
   cb();
 })
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', cb => {
   del.sync('dist');
   cb();
 })

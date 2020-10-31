@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Document</title>
     <link rel="stylesheet" href="/dist/css/styles.css">
 
@@ -16,6 +16,11 @@
           }
         @font-face {
             font-family: OpenSans;
+            src: url('/dist/fonts/OpenSans-SemiBold.ttf');
+            font-weight: 600;
+          }
+        @font-face {
+            font-family: OpenSans;
             src: url('/dist/fonts/OpenSans-Bold.ttf');
             font-weight: 700;
           }
@@ -23,34 +28,60 @@
 
 </head>
 <body>
+    <header class="header__fixed-container">
+        <div class="header__container">
+            <h1 class="header__title">
+                <img src="/app/images/tag.svg" alt="ikona">
+                <span class="d-none d-md-block ml-2">
+                    Front-end
+                </span>
+            </h1>
+            <nav class="header__nav-container">
+                <ul class="header__desktop-menu d-none d-md-flex">
+                    <li>
+                        <a href="#news" class="header__menu-item">
+                            Wiadomości
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="#technologies" class="header__menu-item">
+                            Technologie
+                        </a>
+                    </li>
+                </ul>
+                <button class="hamburger__container d-md-none">
+                    <div class="hamburger__line hamburger__line--1"></div>
+                    <div class="hamburger__line hamburger__line--2"></div>
+                    <div class="hamburger__line hamburger__line--3"></div>
+                </button>
 
-    <header class="header__container">
-        <h1 class="header__title">
-            <img src="/app/images/tag.svg" alt="ikona">
-            <span class="d-none d-md-block ml-2">
-                Front-end
-            </span>
-        </h1>
-        <nav class="header__nav-container">
-            <ul class="header__desktop-list-container d-none d-md-flex">
-                <li>
-                    <a href="#news">
+            </nav>
+            <ul class="header__mobile-menu d-md-none">
+                <li class="mb-5">
+                    <a href="#news" class="header__menu-item ml-0" tabindex="-1">
                         Wiadomości
                     </a> 
                 </li>
-                <li>
-                    <a href="#technologies">
+                <li class="mb-5">
+                    <a href="#technologies" class="header__menu-item ml-0" tabindex="-1">
                         Technologie
                     </a>
                 </li>
             </ul>
-            <button class="hamburger__container">
-                <div class="hamburger__line hamburger__line--1"></div>
-                <div class="hamburger__line hamburger__line--2"></div>
-                <div class="hamburger__line hamburger__line--3"></div>
-            </button>
-        </nav>
+        </div>
     </header>
+
+    <main >
+        <div class="plug">
+
+        </div>
+        <div id="news">
+
+        </div>
+        <div id="technologies">
+
+        </div>
+    </main>
 
 </body>
 </html> 

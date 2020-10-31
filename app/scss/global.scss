@@ -1,7 +1,4 @@
-@import "node_modules/bootstrap/scss/bootstrap";
-
-@import "helpers/hamburger.scss";
-
+@import "bootstrap";
 
 // File to set global css settings and import scss files from other sections in right order
 
@@ -13,19 +10,16 @@ $orange-dark: #E06D00;
 $red: #EB5757;
 $blue: #118AB2;
 
+html {
+    scroll-behavior: smooth;
+}
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
 
 ul, li{
     list-style-type: none;
-    padding: 0;
-}
-a{
-    text-decoration: none;
-    &:hover{
-        text-decoration: none;
-    }
 }
 
 button {
@@ -34,15 +28,36 @@ button {
 }
 
 body{
-    font-family: OpenSans;
-    display: flex;
-    justify-content: center;
+    height: 2500px;
+    margin-top: 148px;
+    @include media-breakpoint-down(sm) {
+        margin-top: 51px;
+    }
+}
+
+.plug{
+    height: 800px;
+    width: 100%;
+    background-color: green;
+}
+#news{
+    height: 800px;
+    width: 100%;
+    background-color: yellow;
+}
+#technologies{
+    height: 800px;
+    width: 100%;
+    background-color: blue;
 }
 
 @function rem-calc($size) {
     $remSize: $size / 16;
     @return #{$remSize}rem;
 }
+// import helpers
+
+@import "helpers/hamburger.scss";
 
 // import files from sections
 

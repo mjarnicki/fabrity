@@ -1,12 +1,23 @@
 .header{
+    &__fixed-container{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
     &__container{
-        margin: 50px 15px;
-        width: 1208px;
+        position: relative;
+        margin: 50px auto;
+        padding: 0 15px;
+        max-width: 1208px;
+        height: 48px;
         background-color: $blue-light;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include media-breakpoint-down(md) {
+        z-index: 10;
+        @include media-breakpoint-down(sm) {
+            height: 51px;
             margin: 0;
             padding: 15px 25px;
         }
@@ -16,7 +27,7 @@
         font-size: rem-calc(36);
         font-weight: 700;
         margin: 0;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
               height: 24px;          
         }
     }
@@ -24,36 +35,57 @@
         display: flex;
         align-items: center;
     }
-    &__desktop-list-container{
+    &__desktop-menu{
         margin: 0;
         height: 100%;
         display: flex;
         align-items: center;
-        a{
-            font-weight: 600;
-            color: $black;
-            margin-left: 40px;
-            position: relative;
+    }
+    &__mobile-menu{
+        display: flex;
+        margin: 0;
+        padding-inline-start: 0;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: white;
+        width: 100vw;
+        // height: 100vh;
+        height: 180px;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        flex-direction: column;
+        transition: top 0.3s ease-in-out;
+        &--active{
+            transition: top 0.3s ease-in-out;
+            top: 0;
+        }
+    }
+    &__menu-item{
+        font-weight: 600;
+        color: $black;
+        margin-left: 40px;
+        position: relative;
+        transition: color .3s ease-in-out;
+        padding-bottom: 7px;
+        &:after{
+            content: "";
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $orange-dark;
+            width: 50%;
+            height: 2px;
+            transition: opacity .3s ease-in-out;
+        }
+        &--active, &:hover, &:focus{
             transition: color .3s ease-in-out;
-            padding-bottom: 7px;
+            color: $orange-dark;
             &:after{
-                content: "";
-                opacity: 0;
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: $orange-dark;
-                width: 50%;
-                height: 2px;
-                transition: opacity .3s ease-in-out;
-            }
-            &--active, &:hover, &:focus{
-                transition: color .3s ease-in-out;
-                color: $orange-dark;
-                &:after{
-                    opacity: 1;
-                }
+                opacity: 1;
             }
         }
     }
