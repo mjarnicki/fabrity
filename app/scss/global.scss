@@ -16,6 +16,7 @@ html {
 
 *, ::after, ::before {
     box-sizing: border-box;
+    outline-width: 0;
 }
 
 ul, li{
@@ -28,6 +29,7 @@ button {
 }
 
 body{
+    background-color: $blue-light;
     height: 2500px;
     margin-top: 148px;
     @include media-breakpoint-down(sm) {
@@ -62,4 +64,5 @@ body{
 // import files from sections
 
 @import "sections/header.scss";
+@import "sections/slider-form.scss";
 

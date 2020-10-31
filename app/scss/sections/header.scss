@@ -4,18 +4,18 @@
         width: 100%;
         top: 0;
         left: 0;
+        background-color: $blue-light;
+        z-index: 10;
     }
     &__container{
         position: relative;
         margin: 50px auto;
-        padding: 0 15px;
-        max-width: 1208px;
+        padding: 0 108px 0 15px;
+        max-width: 1319px;
         height: 48px;
-        background-color: $blue-light;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 10;
         @include media-breakpoint-down(sm) {
             height: 51px;
             margin: 0;
@@ -50,8 +50,7 @@
         left: 0;
         background-color: white;
         width: 100vw;
-        // height: 100vh;
-        height: 180px;
+        height: 100vh;
         align-items: center;
         justify-content: center;
         z-index: -1;

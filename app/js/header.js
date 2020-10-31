@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     })
 
+    // mark active element depending on scroll position TODO
+
+ 
+
+    // functions
+
     function toggleMobileMenu() {
       
       body.classList.toggle('overflow-hidden');
