@@ -2,7 +2,7 @@
     background: #FFFFFF;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.07);
     border-radius: 20px;
-    height: 630px;
+    height: 680px;
     margin: 0 15px;
     
     &__container{
@@ -118,12 +118,6 @@
         align-items: center;
         justify-content: center;
     }
-    &__welcome-container{
-        margin-top: 2rem;
-    }
-    &__login-container{
-        text-align: center;
-    }
     &__header{
         font-size: rem-calc(36);
         font-weight: 700;
@@ -132,6 +126,11 @@
         text-align: center;
         color: $gray;
         margin: 1rem 0;
+    }
+    &__line-separator{
+        width: 73px;
+        height: 2px;
+        background-color: $orange;
     }
     &__button-primary{
         width: 230px;
@@ -172,6 +171,26 @@
     &__text-input-container{
         position: relative;
     }
+    &__validate{
+        .form__text-input:invalid{
+            border-color: $red;
+            transition: border-color .2s ease-in-out;
+            & ~ .form__text-error{
+                opacity: 1;
+                transition: opacity .2s ease-in-out;
+            }
+        }
+        .form__checkbox-input:invalid{
+            & ~ .form__checkbox-checkbox{
+                background-color: $red;
+                transition: background-color .2s ease-in-out;
+            }
+            & ~ .form__text-error{
+                opacity: 1;
+                transition: opacity .2s ease-in-out;
+            }
+        }
+    }
     &__text-input{
         width: 300px;
         height: 50px;
@@ -185,13 +204,13 @@
             border-color: $orange;
             transition: border-color .2s ease-in-out;
             & ~ .form__text-placeholder{
-                top: -17px;
+                top: -11px;
                 transition: top .2s ease-in-out;
             }
         }
         &:not(:placeholder-shown){
             & ~ .form__text-placeholder{
-                top: -17px;
+                top: -11px;
                 transition: top .2s ease-in-out;
             }
         }
@@ -202,8 +221,8 @@
     }
     &__text-placeholder{
         position: absolute;
-        top: 6px;
-        padding: 7px;
+        top: 14px;
+        padding: 0 7px;
         color: $gray;
         margin: 0;
         font-size: rem-calc(14);
@@ -212,7 +231,17 @@
         background-color: #fff;
         transition: top .2s ease-in-out;
     }
-    &__show-password{
+    &__text-error{
+        position: absolute;
+        left: 20px;
+        bottom: -20px;
+        color: $red;
+        margin: 0;
+        font-size: rem-calc(12);
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+    &__show-password-button{
         position: absolute;
         top: 11px;
         right: 11px;
@@ -233,7 +262,8 @@
         display: flex;
         font-size: rem-calc(14);
         position: relative;
-        // margin-bottom: 30px;
+        margin-bottom: 30px;
+        margin-top: 20px;
     }
     &__swich-checkbox{
         position: absolute;
@@ -294,6 +324,72 @@
         &:hover, &:focus{
             color: $orange-dark;
             transition: color .2s ease-in-out;
+        }
+    }
+    &__checkbox-container{
+        width: 300px;
+        display: flex;
+        position: relative;
+        margin-bottom: 30px;
+        &:hover{
+            .form__checkbox-checkbox{
+                background-color: $orange-dark;
+                transition: color .2s ease-in-out;
+            }
+        }
+    }
+    &__checkbox-input{
+        position: absolute;
+        top: 3px;
+        left: -30px;
+        opacity: 0;
+        transition: background-color .2s ease-in-out;
+        &:focus{
+            & ~ .form__checkbox-checkbox{
+                background-color: $orange-dark;
+                transition: background-color .2s ease-in-out;
+            }
+        }
+        &:checked{
+            & ~ .form__checkbox-checkbox:after{
+                display: block;
+            }
+        }
+    }
+    &__checkbox-checkbox{
+        background: $orange;
+        border-radius: 5px;
+        min-width: 20px;
+        height: 20px;
+        margin: 8px 11px 0 0;
+        transition: background-color .2s ease-in-out;
+        cursor: pointer;
+        &:after{
+            display: none;
+            content: "";
+            position: relative;
+            top: 3px;
+            left: 7px;
+            width: 7px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        &:hover{
+            background-color: $orange-dark;
+            transition: color .2s ease-in-out;
+        }
+        
+    }
+    &__checkbox-label{
+        cursor: pointer;
+        margin: 0;
+        &:hover{
+            .form__checkbox-checkbox{
+                background-color: $orange-dark;
+                transition: color .2s ease-in-out;
+            }
         }
     }
 }

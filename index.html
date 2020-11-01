@@ -88,41 +88,98 @@
                 </div>
                 <div class="col-12 col-md-6 form__container">
                     
-                    <div class="form__welcome-container d-none">
-                        <h2 class="form__header mb-5">Dzień dobry</h1>
+                    <div id="choose-container" class="flex-center mt-2 d-none">
+                        <h2 class="form__header mb-5">Dzień dobry</h2>
+
                         <button class="form__button-primary">
                             Zaloguj się
                         </button>
+
                         <p class="form__text-separator"> lub</p>
+
                         <button class="form__button-secondary">
                             Zarejestruj się
                         </button>
                     </div>
 
-                    <form action="" class="form__login-container">
-                        <h2 class="form__header mb-5">Zaloguj się</h1>
-                        <div class="form__text-input-container mb-4">
-                            <input type="text" class="form__text-input" placeholder=" " id="login" required>
-                            <label for="login" class="form__text-placeholder">Login</label>
+                    <form id="login-container" class="flex-center d-none">
+                        <h2 class="form__header mb-5">Zaloguj się</h2>
+
+                        <div class="form__text-input-container mb-30">
+                            <input id="login-login" type="text" class="form__text-input" placeholder=" "  required>
+                            <label for="login-login" class="form__text-placeholder">Login</label>
+                            <label for="login-login" class="form__text-error">Nieprawidłowy login</label>
                         </div>
+
                         <div class="form__text-input-container mb-3">
-                            <input type="password" class="form__text-input" placeholder=" " id="password" required>
-                            <button class="form__show-password" aria-label="pokaż hasło">
+                            <input id="password-login" type="password" class="form__text-input" placeholder=" " required>
+                            <label for="password-login" class="form__text-placeholder">Hasło</label>
+                            <label for="password-login" class="form__text-error">Błędne hasło</label>
+                        </div>
+
+                        <div class="form__swich-container">
+                            <input class="form__swich-checkbox" type="checkbox" id="remember-session">
+                            <label for="remember-session" class="form__swich-icon"></label>
+                            <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</label>
+                        </div>
+
+                        <button type="submit" value="Dalej" id="login-submit" class="form__button-primary mb-3">
+                            Dalej
+                        </button>
+
+                        <a class="form__link" href="">Nie mam konta</a>
+                    </form>
+                    <div id="login-container-confirmed" class="flex-center d-none">
+                        <h2 class="form__header">Gratuluję, zalogowałeś się!</h2>
+                        <a class="form__link" href="">Powrót</a>
+                    </div>
+
+                    <form id="register-container" class="flex-center">
+                        <h2 class="form__header mb-30">Zarejestruj się</h2>
+
+                        <div class="form__text-input-container mb-30">
+                            <input id="login-register" type="text" class="form__text-input" placeholder=" " required>
+                            <label for="login-register" class="form__text-placeholder">Login</label>
+                            <label for="login-register" class="form__text-error">Nieprawidłowy login</label>
+                        </div>
+
+                        <div class="form__text-input-container mb-30">
+                            <input id="password-register" type="password" class="form__text-input" placeholder=" " required>
+                            <button class="form__show-password-button" aria-label="pokaż hasło">
                                 <svg class="form__show-password-icon">
                                     <use xlink:href="dist/svg/svg.svg#eye" ></use>
                                 </svg>
                             </button>
-                            <label for="password" class="form__text-placeholder">Hasło</label>
+                            <label for="password-register" class="form__text-placeholder">Hasło</label>
+                            <label for="password-register" class="form__text-error">Błędne hasło</label>
                         </div>
-                        <div class="form__swich-container mb-4">
-                            <input class="form__swich-checkbox" type="checkbox" id="remember-session" required>
-                            <label for="remember-session" class="form__swich-icon"></label>
-                            <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</label>
+                        
+                        <div class="form__line-separator mb-30"></div>
+
+                        <div class="form__text-input-container mb-30">
+                            <input id="name" type="text" class="form__text-input" placeholder=" " required>
+                            <label for="name" class="form__text-placeholder">Imię i nazwisko</label>
+                            <label for="name" class="form__text-error">Błędnie wypełnione pole</label>
                         </div>
-                        <button type="submit" value="Dalej" class="form__button-primary mb-3">
-                            Dalej
+
+                        <div class="form__text-input-container mb-30">
+                            <input id="e-main" type="email" class="form__text-input" placeholder=" " required>
+                            <label for="e-main" class="form__text-placeholder">Adres e-mail</label>
+                            <label for="e-main" class="form__text-error">Nieprawidłowy adres e-mail</label>
+                        </div>
+
+                        <div class="form__checkbox-container">
+                            <input id="agree" type="checkbox" class="form__checkbox-input" required> 
+                            <label for="agree" class="form__checkbox-checkbox"></label>
+                            <label for="agree" class="form__checkbox-label">Wyrażam zgodę na lorem ipsum lorem ipsum</label>
+                            <label for="agree" class="form__text-error">Pole wymagane</label>
+                        </div>
+
+                        <button type="submit" value="Załóż konto" id="register-submit" class="form__button-primary mb-3">
+                            Załóż konto
                         </button>
-                        <a class="form__link" href="">Nie mam konta</a>
+
+                        <a class="form__link" href="">Chcę się zalogować</a>
                     </form>
                 </div>
             </div>

@@ -32,6 +32,19 @@ button {
     }
 }
 
+.mb-30{
+    margin-bottom: 30px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 body{
     background-color: $blue-light;
     height: 2500px;
@@ -41,11 +54,7 @@ body{
     }
 }
 
-.plug{
-    height: 800px;
-    width: 100%;
-    background-color: green;
-}
+
 #news{
     height: 800px;
     width: 100%;
