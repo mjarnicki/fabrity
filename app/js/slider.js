@@ -6,7 +6,8 @@ const toggleAutoplayButton = document.querySelector(".slider__toggle-autoplay");
 generateDots(slides, dotsContainer)
 const dots = document.querySelectorAll('.slider__dot')
 const sliderLength = dots.length
-let autoSlide = true
+let autoSlideFlag = true
+let sliderInterval = setInterval(() => nextSlide(slides, dots), 4000);
 
 // initial slider launch
 changeSlide(1, slides, dots);
@@ -19,45 +20,30 @@ dotsContainer.addEventListener('click', event => {
 
 // change slide with keyboard
 dotsContainer.addEventListener('keypress', event => {
-    
     if(event.keyCode == 32 || event.keyCode == 13){
         const dotIndex = event.target.getAttribute('index');
         if(dotIndex) changeSlide(dotIndex, slides, dots)
     }
 })
 
-toggleAutoplayButton.addEventListener('click', event => {
-    console.log('test przycisku');
-    let light
-    if (!autoSlide) {
-        light = window.setInterval(nextSlide(slides, dots),1500);
-        autoSlide = true;
+// toggle auto sliding
+
+toggleAutoplayButton.addEventListener('click', () => {
+    if (!autoSlideFlag) {
+        nextSlide(slides, dots);
+        sliderInterval = setInterval(() => nextSlide(slides, dots), 4000);
+        autoSlideFlag = true;
+        document.querySelector('.slider__toggle-autoplay--play').classList.toggle('d-none')
+        document.querySelector('.slider__toggle-autoplay--pause').classList.toggle('d-none')
+        toggleAutoplayButton.setAttribute("aria-label", "zatrzymaj slider");
     } else {
-        window.clearInterval(light);
-        autoSlide = false;
-        light = null;
+        window.clearInterval(sliderInterval);
+        autoSlideFlag = false;
+        document.querySelector('.slider__toggle-autoplay--play').classList.toggle('d-none')
+        document.querySelector('.slider__toggle-autoplay--pause').classList.toggle('d-none')
+        toggleAutoplayButton.setAttribute("aria-label", "uruchom slider");
     }
 })
-
-
-
-function change() {
-}
-
-// autoplay
-
-// setInterval( () => {
-
-//         nextSlide(slides, dots)
-
-//         // let activeDotIndex = document.querySelector('.slider__dot--active').getAttribute('index')-0
-
-//         // console.log(activeDotIndex);
-
-//         // if(sliderLength === activeDotIndex) changeSlide(1, slides, dots)
-//         // else changeSlide((activeDotIndex + 1), slides, dots)
-//     }, 4000);
-
 
 });
 
