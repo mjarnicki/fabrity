@@ -1,14 +1,16 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
-const cssnano = require('gulp-cssnano');
-const imagemin = require('gulp-imagemin');
-const babel = require('gulp-babel');
-const browserSync = require('browser-sync').create();
-const autoprefixer = require('gulp-autoprefixer');
-const plumber = require('gulp-plumber');
-const concat = require('gulp-concat');
-const del = require('del');
+const gulp = require('gulp'),
+      sass = require('gulp-sass'),
+      uglify = require('gulp-uglify'),
+      cssnano = require('gulp-cssnano'),
+      imagemin = require('gulp-imagemin'),
+      babel = require('gulp-babel'),
+      browserSync = require('browser-sync').create(),
+      autoprefixer = require('gulp-autoprefixer'),
+      plumber = require('gulp-plumber'),
+      concat = require('gulp-concat'),
+      svgo = require('gulp-svgo'),
+      svgstore = require('gulp-svgstore'),
+      del = require('del');
 
 // OPTIMIZING TASKS
 
@@ -42,6 +44,18 @@ gulp.task('images', () => {
       interlaced: true
     }))
   .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('svg', function () {
+  return gulp.src('app/svg/**/*.svg')
+      .pipe(svgo({
+          plugins: [
+            { removeTitle: true },
+            { convertPathData: { floatPrecision: 2 } },
+            { removeViewBox: false }
+          ]}))
+      .pipe(svgstore({ inlineSvg: true }))
+      .pipe(gulp.dest('dist/svg'));
 });
 
 gulp.task('fonts', () => {
@@ -81,7 +95,7 @@ function reload(cb) {
 gulp.task('dist', 
   gulp.series(
     'clean',
-    gulp.parallel('css', 'script', 'fonts', 'images'),
+    gulp.parallel('css', 'script', 'fonts', 'images', 'svg'),
   ));
 
 gulp.task('default', 

@@ -86,10 +86,44 @@
                         <!-- dots will be generated here by js -->
                     </ul>
                 </div>
-                <div class="col-12 col-md-6">
-                    <button class="zmiana">
-                        zmień slajd na 3
-                    </button>
+                <div class="col-12 col-md-6 form__container">
+                    
+                    <div class="form__welcome-container d-none">
+                        <h2 class="form__header mb-5">Dzień dobry</h1>
+                        <button class="form__button-primary">
+                            Zaloguj się
+                        </button>
+                        <p class="form__text-separator"> lub</p>
+                        <button class="form__button-secondary">
+                            Zarejestruj się
+                        </button>
+                    </div>
+
+                    <form action="" class="form__login-container">
+                        <h2 class="form__header mb-5">Zaloguj się</h1>
+                        <div class="form__text-input-container mb-4">
+                            <input type="text" class="form__text-input" placeholder=" " id="login" required>
+                            <label for="login" class="form__text-placeholder">Login</label>
+                        </div>
+                        <div class="form__text-input-container mb-3">
+                            <input type="password" class="form__text-input" placeholder=" " id="password" required>
+                            <button class="form__show-password" aria-label="pokaż hasło">
+                                <svg class="form__show-password-icon">
+                                    <use xlink:href="dist/svg/svg.svg#eye" ></use>
+                                </svg>
+                            </button>
+                            <label for="password" class="form__text-placeholder">Hasło</label>
+                        </div>
+                        <div class="form__swich-container mb-4">
+                            <input class="form__swich-checkbox" type="checkbox" id="remember-session" required>
+                            <label for="remember-session" class="form__swich-icon"></label>
+                            <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</label>
+                        </div>
+                        <button type="submit" value="Dalej" class="form__button-primary mb-3">
+                            Dalej
+                        </button>
+                        <a class="form__link" href="">Nie mam konta</a>
+                    </form>
                 </div>
             </div>
         </section>

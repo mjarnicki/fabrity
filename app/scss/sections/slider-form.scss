@@ -35,7 +35,6 @@
         &:hover, &:focus{
             transition: border-color 0.2s ease-in-out;
             border-color: $orange-dark;
-            outline: none;
             & > .slider__toggle-autoplay--play {
                 border-color: transparent transparent transparent $orange-dark;
                 transition: border-color 0.2s ease-in-out;
@@ -52,6 +51,7 @@
             transform: translate(-50%, -50%);
             width: 20px;
             height: 20px;
+            margin-left: 3px;
             border-width: 10px 0px 10px 20px;
             border-style: solid;
             border-color: transparent transparent transparent #fff;
@@ -64,7 +64,6 @@
             transform: translate(-50%, -50%);
             width: 16px;
             height: 20px;
-            margin: 0 1px;
             border-style: double;
             border-width: 0 0 0 16px;
             border-color: #fff;
@@ -109,6 +108,192 @@
         &:hover, &:focus, &--active{
             // background-color: $blue-light;
             background-color: red;
+        }
+    }
+}
+
+.form{
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__welcome-container{
+        margin-top: 2rem;
+    }
+    &__login-container{
+        text-align: center;
+    }
+    &__header{
+        font-size: rem-calc(36);
+        font-weight: 700;
+    }
+    &__text-separator{
+        text-align: center;
+        color: $gray;
+        margin: 1rem 0;
+    }
+    &__button-primary{
+        width: 230px;
+        height: 40px;
+        border-radius: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: $orange;
+        transition: background-color .2s ease-in-out;
+        margin: 0 auto;
+        &:hover, &:focus{
+            background-color: $orange-dark;
+            transition: background-color .2s ease-in-out;
+        }
+    }
+    &__button-secondary{
+        width: 230px;
+        height: 40px;
+        border-radius: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $orange;
+        border: 2px solid #F49E4C;
+        background-color: white;
+        margin: 0 auto;
+        transition: background-color .2s ease-in-out, color .2s ease-in-out;
+        &:hover, &:focus{
+            background-color: $orange;
+            color: white;
+            transition: background-color .2s ease-in-out, color .2s ease-in-out;
+        }
+    }
+    &__text-input-container{
+        position: relative;
+    }
+    &__text-input{
+        width: 300px;
+        height: 50px;
+        // margin-bottom: 30px;
+        border: 1px solid $gray;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding-left: 20px;
+        transition: border-color .2s ease-in-out;
+        &:focus {
+            border-color: $orange;
+            transition: border-color .2s ease-in-out;
+            & ~ .form__text-placeholder{
+                top: -17px;
+                transition: top .2s ease-in-out;
+            }
+        }
+        &:not(:placeholder-shown){
+            & ~ .form__text-placeholder{
+                top: -17px;
+                transition: top .2s ease-in-out;
+            }
+        }
+        &:hover{
+            border-color: $orange;
+            transition: border-color .2s ease-in-out;
+        }
+    }
+    &__text-placeholder{
+        position: absolute;
+        top: 6px;
+        padding: 7px;
+        color: $gray;
+        margin: 0;
+        font-size: rem-calc(14);
+        font-weight: 300;
+        left: 13px;
+        background-color: #fff;
+        transition: top .2s ease-in-out;
+    }
+    &__show-password{
+        position: absolute;
+        top: 11px;
+        right: 11px;
+        &:hover, &:focus{
+            .form__show-password-icon{
+                fill: $orange;
+                transition: fill 0.2s ease-in-out;
+            }
+        }
+    }
+    &__show-password-icon{
+        width: 20px;
+        height: 12.5px;
+        transition: fill 0.2s ease-in-out;
+    }
+
+    &__swich-container{
+        display: flex;
+        font-size: rem-calc(14);
+        position: relative;
+        // margin-bottom: 30px;
+    }
+    &__swich-checkbox{
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        &:checked{
+            & ~ .form__swich-icon{
+                background-color: $orange;
+                transition: background-color 0.2s ease-in-out;
+                &:after{
+                    content: '';
+                    left: 26px;
+                    transition: left 0.2s ease-in-out;
+                }
+            }
+        }
+        &:hover, &:focus{
+            & ~ .form__swich-icon{
+                    border: 2px solid $orange;
+                    transition: border-color 0.2s ease-in-out;;
+                }
+            }
+    }
+    &__swich-icon{
+        width: 49px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: $gray;
+        transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        border: 2px solid white;
+        cursor: pointer;
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            background-color: #fff;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+            transition: left 0.2s ease-in-out;
+        }
+    }
+    &__swich-label{
+        cursor: pointer;
+        font-size: rem-calc(14);
+        margin-left: 14px;
+    }
+
+    &__link{
+        font-weight: 700;
+        color: $orange;
+        margin: 0 auto;
+        transition: color .2s ease-in-out;
+        &:hover, &:focus{
+            color: $orange-dark;
+            transition: color .2s ease-in-out;
         }
     }
 }

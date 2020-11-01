@@ -31,6 +31,8 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.1.0",
+    "gulp-svgo": "^2.2.1",
+    "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^5.0.0"
   },
