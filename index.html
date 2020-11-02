@@ -87,22 +87,22 @@
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 form__container">
-                    
-                    <div id="choose-container" class="flex-center mt-2 d-none">
+                    <!-- CHOOSE -->
+                    <div id="choose" class="flex-center mt-2 ">
                         <h2 class="form__header mb-5">Dzień dobry</h2>
 
-                        <button class="form__button-primary">
+                        <button class="form__button-primary" target="login">
                             Zaloguj się
                         </button>
 
                         <p class="form__text-separator"> lub</p>
 
-                        <button class="form__button-secondary">
+                        <button class="form__button-secondary" target="register">
                             Zarejestruj się
                         </button>
                     </div>
-
-                    <form id="login-container" class="flex-center d-none">
+                    <!-- LOGIN -->
+                    <form id="login" class="flex-center d-none">
                         <h2 class="form__header mb-5">Zaloguj się</h2>
 
                         <div class="form__text-input-container mb-30">
@@ -113,6 +113,11 @@
 
                         <div class="form__text-input-container mb-3">
                             <input id="password-login" type="password" class="form__text-input" placeholder=" " required>
+                            <button class="form__show-password-button" aria-label="pokaż hasło">
+                                <svg class="form__show-password-icon">
+                                    <use xlink:href="dist/svg/svg.svg#eye" ></use>
+                                </svg>
+                            </button>
                             <label for="password-login" class="form__text-placeholder">Hasło</label>
                             <label for="password-login" class="form__text-error">Błędne hasło</label>
                         </div>
@@ -123,24 +128,25 @@
                             <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</label>
                         </div>
 
-                        <button type="submit" value="Dalej" id="login-submit" class="form__button-primary mb-3">
+                        <button type="submit" value="Dalej" target="login-confirmed" id="login-submit" class="form__button-primary mb-3">
                             Dalej
                         </button>
 
-                        <a class="form__link" href="">Nie mam konta</a>
+                        <button class="form__link" target="register">Nie mam konta</button>
                     </form>
-                    <div id="login-container-confirmed" class="flex-center d-none">
+                    <!-- LOGIN CONFIRMED -->
+                    <div id="login-confirmed" class="flex-center d-none">
                         <h2 class="form__header">Gratuluję, zalogowałeś się!</h2>
-                        <a class="form__link" href="">Powrót</a>
+                        <button class="form__link" target="choose">Powrót</a>
                     </div>
-
-                    <form id="register-container" class="flex-center">
+                    <!-- REGISTER -->
+                    <form id="register" class="flex-center d-none" >
                         <h2 class="form__header mb-30">Zarejestruj się</h2>
 
                         <div class="form__text-input-container mb-30">
                             <input id="login-register" type="text" class="form__text-input" placeholder=" " required>
                             <label for="login-register" class="form__text-placeholder">Login</label>
-                            <label for="login-register" class="form__text-error">Nieprawidłowy login</label>
+                            <div class="form__text-error">Nieprawidłowy login</div>
                         </div>
 
                         <div class="form__text-input-container mb-30">
@@ -175,12 +181,17 @@
                             <label for="agree" class="form__text-error">Pole wymagane</label>
                         </div>
 
-                        <button type="submit" value="Załóż konto" id="register-submit" class="form__button-primary mb-3">
+                        <button target="register-confirmed" type="submit" value="Załóż konto" id="register-submit" class="form__button-primary mb-3">
                             Załóż konto
                         </button>
 
-                        <a class="form__link" href="">Chcę się zalogować</a>
+                        <button class="form__link" target="login">Chcę się zalogować</button>
                     </form>
+                    <!-- REGISTER CONFIRMED -->
+                    <div id="register-confirmed" class="flex-center d-none">
+                        <h2 class="form__header">Gratuluję, konto zostało utworzone!</h2>
+                        <button class="form__link" target="choose">Powrót</a>
+                    </div>
                 </div>
             </div>
         </section>
