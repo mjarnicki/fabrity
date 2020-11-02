@@ -30,5 +30,8 @@
         height: 145px;
         object-fit: cover;
         margin-bottom: 8px;
+        &--big{
+            height: 290px;
+        }
     }
 }
