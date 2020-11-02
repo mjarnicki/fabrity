@@ -1,0 +1,34 @@
+.publications{
+    &__header{
+        font-size: rem-calc(36);
+        font-weight: 700;
+        margin-top: 74px;
+        text-align: center;
+    }
+    &__container{
+        max-width: 1072px;
+        margin: 0 auto;
+    }
+    &__release-header{
+        display: flex;
+    }
+    &__release-commas-icon{
+        width: 30px;
+        height: 23px;
+        margin-right: 14px;
+    }
+    &__release-title{
+        font-size: rem-calc(24);
+        font-weight: 700;
+    }
+    &__release-date{
+        font-size: rem-calc(14);
+        margin-bottom: 12px;
+    }
+    &__teaser{
+        width: 100%;
+        height: 145px;
+        object-fit: cover;
+        margin-bottom: 8px;
+    }
+}

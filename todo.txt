@@ -1,0 +1,2 @@
+zrobić kasowanie pól po wysłaniu formularza
+zrobić animacje przejścia do innej części formularza
