@@ -48,7 +48,7 @@ function generatePublicationHTML(element, index, parsedDate){
         </div>
         <p class="publications__release-date">Data dodania <time>${parsedDate}</time>.</p>
 
-        <img class="publications__teaser" src="${element.image}" alt="${element.title} zajawka">
+        <img class="publications__teaser ${index == 1 ? 'publications__teaser--big' : ''}" src="${element.image}" alt="${element.title} zajawka">
 
         <p>${element.text}</p>
     </article>`
