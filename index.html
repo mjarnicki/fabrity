@@ -195,15 +195,22 @@
                 </div>
             </div>
         </section>
-        <section class="publications__container container">
+        <section class="publications__container container" id="news">
             <h2 class="publications__header">Dzień dobry</h2>
-
+            <div id="publications-to-paste" class="publications__inner-container">
+                <!-- publications will be generated here by js -->
+                <div class="publications__loader">
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <button class="publications__load-more">
+                Załaduj więcej 
+                <svg class="publications__load-more-icon">
+                    <use xlink:href="dist/svg/svg.svg#load" ></use>
+                </svg>
+            </button>
         </section>
-        <div id="news">
-
-        </div>
         <div id="technologies">
-
         </div>
     </main>
 

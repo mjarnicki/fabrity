@@ -54,12 +54,6 @@ body{
     }
 }
 
-
-#news{
-    height: 800px;
-    width: 100%;
-    background-color: yellow;
-}
 #technologies{
     height: 800px;
     width: 100%;
@@ -73,6 +67,7 @@ body{
 // import helpers
 
 @import "helpers/hamburger.scss";
+@import "helpers/loader.scss";
 
 // import files from sections
 

@@ -8,6 +8,11 @@
     &__container{
         max-width: 1072px;
         margin: 0 auto;
+        min-height: 800px;
+    }
+    &__inner-container{
+        position: relative;
+        min-height: 800px;
     }
     &__release-header{
         display: flex;
@@ -33,5 +38,39 @@
         &--big{
             height: 290px;
         }
+    }
+    &__loader{
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .15);  
+        backdrop-filter: blur(5px);
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__load-more{
+        display: block;
+        margin: 0 auto;
+        color: $orange;
+        font-weight: 700;
+        transition: color .2s ease-in-out;
+        &:hover, &:focus{
+            color: $orange-dark;
+            transition: color .2s ease-in-out;
+            .publications__load-more-icon{
+                fill: $orange-dark;
+                transition: fill .2s ease-in-out;
+            }
+        }
+    }
+    &__load-more-icon{
+        fill: $orange;
+        width: 25px;
+        height: 25px;
+        transition: fill .2s ease-in-out;
     }
 }
