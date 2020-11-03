@@ -29,7 +29,12 @@ gulp.task('script', () => {
   return gulp.src('app/js/**/*.js')
       .pipe(plumber())
       .pipe(babel({
-          presets: ['@babel/env']
+          presets: [
+              ["@babel/preset-env", {
+                useBuiltIns: "usage",
+                corejs: 3,
+            }]
+          ]
       }))
       .pipe(concat('scripts.js'))
     // css uglify commented for debugging

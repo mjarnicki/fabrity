@@ -37,6 +37,7 @@
     "gulp-useref": "^5.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^4.5.3",
+    "core-js": "^3.6.5"
   }
 }
