@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const showPasswordButtonsList = document.querySelectorAll('.form__show-password-button')
     const formContainer = document.querySelector('.form__container')
 
-    showPasswordButtonsList.forEach( item => {
+    for (let item of showPasswordButtonsList) {
         item.addEventListener('click', event => {
 
             event.preventDefault()
@@ -23,15 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
     
             hidePasswordFlag = !hidePasswordFlag
         });
-      })
+      }
 
-    document.querySelector('#login-submit').addEventListener('click', validateForm)
-    document.querySelector('#register-submit').addEventListener('click', validateForm)
+    document.querySelector('.login-submit').addEventListener('click', validateForm)
+    document.querySelector('.register-submit').addEventListener('click', validateForm)
 
 
 
     // form navigation
-    formContainer.querySelectorAll('[target]').forEach( button => {
+    for (let button of formContainer.querySelectorAll('.form-navigation')) {
 
         const formNodeList = formContainer.children
         
@@ -42,21 +42,21 @@ document.addEventListener("DOMContentLoaded", function() {
             if(button.getAttribute('type') && button.parentNode.checkValidity() || !button.getAttribute('type')){
                 for (let formElement of formNodeList) {
 
-                    formElement.querySelectorAll('input').forEach(input=>{
+                    for (let input of formElement.querySelectorAll('input')) {
                         input.value = null
-                    })
+                    }
 
                     formElement.classList.add('d-none')
                     formElement.classList.remove('form__validate')
     
-                    if(formElement.getAttribute('id') === button.getAttribute('target')){
+                    if(formElement.getAttribute('id') === button.getAttribute('id')){
                         formElement.classList.remove('d-none')
                         formElement.querySelectorAll('input, button')[0].focus()
                     }
                   }
                 }
         })
-    })
+    }
     
 
 });

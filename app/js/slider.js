@@ -45,41 +45,43 @@ toggleAutoplayButton.addEventListener('click', () => {
     }
 })
 
-});
+
 
 function changeSlide(n, slides, dots) {
-
-    slides.forEach((item)=> {
+    
+    for (let item of slides) {
         item.classList.remove('slider__img--active')
-    })
-
-    dots.forEach((item)=> {
+    }
+    
+    for (let item of dots) {
         item.classList.remove('slider__dot--active')
-    })
+    }
 
     slides[n-1].classList.add('slider__img--active');
     dots[n-1].classList.add('slider__dot--active');
+    
+}
+
+function nextSlide(slides, dots){
+    const activeDotIndex = document.querySelector('.slider__dot--active').getAttribute('index')
+    const activeDotIndexInt = parseInt(activeDotIndex)
+    const sliderLength = dots.length;
+
+    if(sliderLength === activeDotIndexInt) changeSlide(1, slides, dots)
+    else changeSlide((activeDotIndexInt + 1), slides, dots)
 }
 
 function generateDots(slides, dotsContainer){
 
     let dotList = '';
 
-    slides.forEach((item, index)=> {
-
+    for (let i = 0; i < slides.length; i++) {
         dotList += 
-        `<li tabindex="0" role="button" class="slider__dot" index="${index + 1}" 
-             aria-label="zmień slajd na ${item.getAttribute('alt')}">
+        `<li tabindex="0" role="button" class="slider__dot" index="${i + 1}" 
+             aria-label="zmień slajd na ${slides[i].getAttribute('alt')}">
         </li>`
-    })
-    dotsContainer.innerHTML = dotList;
-    
+    }
+    dotsContainer.insertAdjacentHTML('beforeend', dotList);
 }
 
-function nextSlide(slides, dots){
-    const activeDotIndex = document.querySelector('.slider__dot--active').getAttribute('index')-0
-    const sliderLength = dots.length;
-
-    if(sliderLength === activeDotIndex) changeSlide(1, slides, dots)
-    else changeSlide((activeDotIndex + 1), slides, dots)
-}
+});

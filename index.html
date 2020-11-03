@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Document</title>
-    <link rel="stylesheet" href="/dist/css/styles.css">
+    <title>Front end</title>
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="icon" type="Shortcut icon" href="dist/images/favicon.png">
+    <meta name="description" content="Example page with simple form">
 
-    <script src="/dist/js/scripts.js"></script>
+    <script src="dist/js/scripts.js"></script>
+    
 
     <style>
         @font-face {
             font-family: OpenSans;
-            src: url('/dist/fonts/OpenSans-Regular.ttf');
+            src: url('dist/fonts/OpenSans-Regular.ttf');
             font-weight: 400;
           }
         @font-face {
             font-family: OpenSans;
-            src: url('/dist/fonts/OpenSans-SemiBold.ttf');
+            src: url('dist/fonts/OpenSans-SemiBold.ttf');
             font-weight: 600;
           }
         @font-face {
             font-family: OpenSans;
-            src: url('/dist/fonts/OpenSans-Bold.ttf');
+            src: url('dist/fonts/OpenSans-Bold.ttf');
             font-weight: 700;
           }
     </style>
@@ -32,7 +35,7 @@
         <div class="header__container">
             <h1 class="header__title">
                 <svg class="header__tag-icon">
-                    <use xlink:href="dist/svg/svg.svg#tag" ></use>
+                    <use xlink:href="dist/svg/svg.svg#tag"></use>
                 </svg>
                 <span class="d-none d-md-block ml-2">
                     Front-end
@@ -52,9 +55,9 @@
                     </li>
                 </ul>
                 <button class="hamburger__container d-md-none">
-                    <div class="hamburger__line hamburger__line--1"></div>
-                    <div class="hamburger__line hamburger__line--2"></div>
-                    <div class="hamburger__line hamburger__line--3"></div>
+                    <span class="hamburger__line hamburger__line--1"></span>
+                    <span class="hamburger__line hamburger__line--2"></span>
+                    <span class="hamburger__line hamburger__line--3"></span>
                 </button>
 
             </nav>
@@ -78,14 +81,13 @@
             <div class="slider-form row">
                 <div class="col-12 col-md-6 slider__container">
                     <button class="slider__toggle-autoplay" aria-label="zatrzymaj slider">
-                        <div class="slider__toggle-autoplay--pause"></div>
-                        <div class="slider__toggle-autoplay--play d-none"></div>
+                        <span class="slider__toggle-autoplay--pause"></span>
+                        <span class="slider__toggle-autoplay--play d-none"></span>
                     </button>
                     <img class="slider__img" src="dist/images/slide-1.png" alt="robot">
                     <img class="slider__img" src="dist/images/slide-2.jpg" alt="górska dolina">
                     <img class="slider__img" src="dist/images/slide-3.jpg" alt="most we mgle">
                     <ul class="slider__dots-container">
-                        <!-- dots will be generated here by js -->
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 form__container">
@@ -93,13 +95,13 @@
                     <div id="choose" class="flex-center mt-2 ">
                         <h2 class="form__header mb-5">Dzień dobry</h2>
 
-                        <button class="form__button-primary" target="login">
+                        <button class="form__button-primary form-navigation" id="login">
                             Zaloguj się
                         </button>
 
                         <p class="form__text-separator"> lub</p>
 
-                        <button class="form__button-secondary" target="register">
+                        <button class="form__button-secondary form-navigation" id="register">
                             Zarejestruj się
                         </button>
                     </div>
@@ -130,16 +132,16 @@
                             <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</label>
                         </div>
 
-                        <button type="submit" value="Dalej" target="login-confirmed" id="login-submit" class="form__button-primary mb-3">
+                        <button type="submit" value="Dalej" id="login-confirmed" class="form__button-primary mb-3 login-submit form-navigation">
                             Dalej
                         </button>
 
-                        <button class="form__link" target="register">Nie mam konta</button>
+                        <button class="form__link form-navigation" id="register">Nie mam konta</button>
                     </form>
                     <!-- LOGIN CONFIRMED -->
                     <div id="login-confirmed" class="flex-center d-none">
                         <h2 class="form__header">Gratuluję, zalogowałeś się!</h2>
-                        <button class="form__link" target="choose">Powrót</a>
+                        <button class="form__link form-navigation" id="choose">Powrót</button>
                     </div>
                     <!-- REGISTER -->
                     <form id="register" class="flex-center d-none" >
@@ -183,16 +185,16 @@
                             <label for="agree" class="form__text-error">Pole wymagane</label>
                         </div>
 
-                        <button target="register-confirmed" type="submit" value="Załóż konto" id="register-submit" class="form__button-primary mb-3">
+                        <button type="submit" value="Załóż konto" id="register-confirmed" class="form__button-primary mb-3 register-submit form-navigation">
                             Załóż konto
                         </button>
 
-                        <button class="form__link" target="login">Chcę się zalogować</button>
+                        <button class="form__link form-navigation" id="login">Chcę się zalogować</button>
                     </form>
                     <!-- REGISTER CONFIRMED -->
                     <div id="register-confirmed" class="flex-center d-none">
                         <h2 class="form__header">Gratuluję, konto zostało utworzone!</h2>
-                        <button class="form__link" target="choose">Powrót</a>
+                        <button class="form__link form-navigation" id="choose">Powrót</button>
                     </div>
                 </div>
             </div>

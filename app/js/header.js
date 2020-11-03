@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // move to page section events for mobile
 
-    mobileMenuItem.forEach( item => {
+    for (let item of mobileMenuItem) {
       item.addEventListener('click', event => {
         toggleMobileMenu();
         scrollToPageSection(event, item, '-51px')
@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
           scrollToPageSection(event, item, '-51px')
         } 
       });
-    })
+    }
 
     // move to page section events for desktop
 
-    desktopMenuItem.forEach( item => {
+    for (let item of desktopMenuItem) {
         item.addEventListener('click', event => {
         scrollToPageSection(event, item, '-148px')
       });
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(event.keyCode == 32 || event.keyCode == 13)
         scrollToPageSection(event, item, '-148px')
       });
-    })
+    }
 
     // mark active element depending on scroll position TODO
 
@@ -56,11 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
       body.classList.toggle('overflow-hidden');
       hamburgerIcon.classList.toggle('hamburger__container--active');
       mobileMenuContainer.classList.toggle('header__mobile-menu--active');
-      mobileMenuContainer.querySelectorAll('.header__menu-item')
-        .forEach( (el) => {
+      for (let el of mobileMenuContainer.querySelectorAll('.header__menu-item')){
           if(el.getAttribute('tabindex')) el.removeAttribute('tabindex')
           else el.setAttribute("tabindex", -1)
-        })
+        }
         trapFocus(parent)
     }
     
