@@ -9,10 +9,14 @@
         max-width: 1072px;
         margin: 0 auto;
         min-height: 800px;
+        margin-bottom: 64px;
     }
     &__inner-container{
         position: relative;
         min-height: 800px;
+    }
+    &__release{
+        margin-bottom: 25px;
     }
     &__release-header{
         display: flex;

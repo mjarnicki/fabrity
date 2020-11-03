@@ -54,7 +54,7 @@ function publicationsNextLoad(publicationsContainer, loaderContainer) {
         }
         
         if (this.readyState == 4 && this.status == 200) {
-            let loadedPublications = publicationsContainer.querySelectorAll('.publications__release-header').length
+            let loadedPublications = publicationsContainer.querySelectorAll('.publications__release').length
             const publicationList = JSON.parse(this.response)
 
             let nextPublicationsContainer = `
@@ -86,7 +86,7 @@ function generatePublicationHTML(element, index){
     let parsedDate = `${date.getFullYear()}.${("0" + (date.getMonth() + 1)).slice(-2)}.${("0" + date.getDay()).slice(-2)} ${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}` 
     
     return `
-    <article>
+    <article class="publications__release">
         <div class="publications__release-header">
             <img src="dist/images/comas.svg" class="publications__release-commas-icon" alt="ikona">
             <h2 class="publications__release-title ${(index == 0 || index == 1) ? 'mb-4' : ''}">

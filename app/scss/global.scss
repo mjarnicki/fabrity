@@ -54,12 +54,6 @@ body{
     }
 }
 
-#technologies{
-    height: 800px;
-    width: 100%;
-    background-color: blue;
-}
-
 @function rem-calc($size) {
     $remSize: $size / 16;
     @return #{$remSize}rem;
@@ -74,4 +68,6 @@ body{
 @import "sections/header.scss";
 @import "sections/slider-form.scss";
 @import "sections/publications.scss";
+@import "sections/technologies.scss";
+@import "sections/footer.scss";
 
