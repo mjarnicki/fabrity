@@ -22,6 +22,10 @@
             padding: 15px 25px;
         }
     }
+    &__tag-icon{
+        width: 48px;
+        height: 48px;
+    }
     &__title{
         display: flex;
         font-size: rem-calc(36);

@@ -88,8 +88,6 @@ function trapFocus(element) {
   const lastFocusableEl = focusableEls[focusableEls.length - 1];
   const KEYCODE_TAB = 9;
 
-  console.log(element);
-
       element.addEventListener('keydown', function(e) {
         var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
         

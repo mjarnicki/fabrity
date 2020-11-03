@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if(button.getAttribute('type') && button.parentNode.checkValidity() || !button.getAttribute('type')){
                 for (let formElement of formNodeList) {
+
+                    formElement.querySelectorAll('input').forEach(input=>{
+                        input.value = null
+                    })
+
                     formElement.classList.add('d-none')
                     formElement.classList.remove('form__validate')
     

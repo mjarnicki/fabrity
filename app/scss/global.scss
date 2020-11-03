@@ -47,7 +47,6 @@ button {
 
 body{
     background-color: $blue-light;
-    height: 2500px;
     margin-top: 148px;
     @include media-breakpoint-down(sm) {
         margin-top: 51px;

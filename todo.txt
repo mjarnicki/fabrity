@@ -1,2 +1,7 @@
-zrobić kasowanie pól po wysłaniu formularza
-zrobić animacje przejścia do innej części formularza
++zrobić kasowanie pól po wysłaniu formularza
+-zrobić animacje przejścia do innej części formularza
++zamienić zdjęcie hashtag na SVG
+-poprawić wersję dla mobilki
+-zrobić wersje kontrastową
+-sprawdzić walidatorami i z czytnikiem
+-zoptymalizować zdjęcia
