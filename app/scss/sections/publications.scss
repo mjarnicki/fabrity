@@ -32,6 +32,9 @@
     &__release-title{
         font-size: rem-calc(24);
         font-weight: 700;
+        @include media-breakpoint-down(sm) {
+            font-size: rem-calc(18);
+        }
     }
     &__release-date{
         font-size: rem-calc(14);
@@ -42,6 +45,12 @@
         height: 145px;
         object-fit: cover;
         margin-bottom: 8px;
+        @include media-breakpoint-only(sm) {
+            height: 120px;
+        }
+        @include media-breakpoint-only(xm) {
+            height: 92px;
+        }
         @include media-breakpoint-up(md) {
             &--big{
                 height: 290px;

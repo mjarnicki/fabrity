@@ -105,6 +105,9 @@
         transform: translateX(50%);
         height: 5px;
         display: flex;
+        @include media-breakpoint-down(md) {
+            bottom: 10px;
+        }
     }
     &__dot{
         width: 60px;

@@ -85,15 +85,21 @@ function generatePublicationHTML(element, index){
     let parsedDate = `${date.getFullYear()}.${("0" + (date.getMonth() + 1)).slice(-2)}.${("0" + date.getDay()).slice(-2)} ${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}` 
     
     return `
-    <article class="publications__release">
-        <div class="publications__release-header">
-            <img src="dist/images/comas.svg" class="publications__release-commas-icon" alt="ikona">
-            <h2 class="publications__release-title ${(index == 0 || index == 1) ? 'mb-2 mb-md-4' : ''}">
-                ${element.title}
-            </h2>
+    <article class="publications__release container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-12 order-last order-md-first">
+                <div class="publications__release-header">
+                    <img src="dist/images/comas.svg" class="publications__release-commas-icon d-none d-md-block" alt="ikona">
+                    <h2 class="publications__release-title ${(index == 0 || index == 1) ? 'mb-2 mb-md-4' : ''}">
+                        ${element.title}
+                    </h2>
+                </div>
+                <p class="publications__release-date d-none d-md-block">Data dodania <time>${parsedDate}</time>.</p>
+            </div>
+            <div class="col-6 col-md-12 order-first order-md-last">
+                <img class="publications__release-teaser ${index == 1 ? 'publications__release-teaser--big' : ''}" src="${element.image}" alt="${element.title} zajawka"/>
+            </div>
         </div>
-        <p class="publications__release-date">Data dodania <time>${parsedDate}</time>.</p>
-        <img class="publications__release-teaser ${index == 1 ? 'publications__release-teaser--big' : ''}" src="${element.image}" alt="${element.title} zajawka"/>
         <p class="publications__release-content">${element.text}</p>
     </article>`
 }
