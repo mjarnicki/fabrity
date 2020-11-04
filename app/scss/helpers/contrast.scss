@@ -38,6 +38,13 @@
         background-color: yellow !important;
     }
 
+    .slider__toggle-autoplay--play{
+        border-color: transparent transparent transparent yellow !important;
+    }
+
+    .loader {
+        border-top: 16px solid white;
+    }
     .form__swich-checkbox, .form__checkbox-input{
         &:focus{
             outline: 0;

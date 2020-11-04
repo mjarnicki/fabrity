@@ -39,7 +39,7 @@ gulp.task('script', () => {
       }))
       .pipe(concat('scripts.js'))
     // css uglify commented for debugging
-      // .pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('dist/js'))
       .pipe(browserSync.stream());
 });
