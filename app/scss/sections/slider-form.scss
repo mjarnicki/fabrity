@@ -6,7 +6,7 @@
     margin: 0 15px;
     transition: min-height 0.3s ease-in-out;
     @include media-breakpoint-down(md) {
-        min-height: 750px;
+        min-height: 550px;
         transition: min-height 0.3s ease-in-out;
     }
     
@@ -140,6 +140,9 @@
         font-size: rem-calc(36);
         font-weight: 700;
         text-align: center;
+        @include media-breakpoint-down(sm) {
+            font-size: rem-calc(30);
+        }
     }
     &__text-separator{
         text-align: center;

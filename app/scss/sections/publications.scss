@@ -4,6 +4,9 @@
         font-weight: 700;
         margin-top: 74px;
         text-align: center;
+        @include media-breakpoint-down(sm) {
+            font-size: rem-calc(30);
+        }
     }
     &__container{
         max-width: 1072px;
