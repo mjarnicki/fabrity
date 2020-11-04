@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if(hidePasswordFlag) {
                 passwordInput.type = "password"
                 showPasswordbutton.setAttribute("aria-label", 'pokaż hasło')
+                showPasswordbutton.classList.remove('form__show-password-button--visible')
             }
             else {
                 passwordInput.type = "text"
                 showPasswordbutton.setAttribute("aria-label", 'ukryj hasło')
+                showPasswordbutton.classList.add('form__show-password-button--visible')
             }
     
             hidePasswordFlag = !hidePasswordFlag

@@ -280,6 +280,27 @@
                 fill: $orange;
                 transition: fill 0.2s ease-in-out;
             }
+            &:after{
+                background-color: $orange;
+                transition: background-color 0.2s ease-in-out;
+            }
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            min-width: 21px;
+            height: 2px;
+            background-color: black;
+            top: 14px;
+            left: 5px;
+            transform: rotate(45deg);
+            transition: background-color 0.2s ease-in-out, min-width 0.2s ease-in-out;
+        }
+        &--visible{
+            &:after{
+                min-width: 0px;
+                transition: min-width 0.2s ease-in-out;
+            }
         }
     }
     &__show-password-icon{

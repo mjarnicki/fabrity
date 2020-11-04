@@ -42,7 +42,7 @@
                 </span>
             </h1>
             <nav class="header__nav-container">
-                <button class="header__contrast-button-icon contrast-icon" title="Zmień kolory witryny na mocno kontrastowe">
+                <button class="header__contrast-button-icon contrast-icon focus-trap" title="Zmień kolory witryny na mocno kontrastowe">
                     <svg class="header__contrast-icon">
                         <use xlink:href="dist/svg/svg.svg#eye" ></use>
                     </svg>
@@ -132,13 +132,13 @@
                         <h2 class="form__header mb-5" id="login-label">Zaloguj się</h2>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="login-login" type="text" class="form__text-input" placeholder=" "  required aria-labelledby="login-label login-login">
+                            <input id="login-login" type="text" minlength="4" class="form__text-input" placeholder=" "  required aria-labelledby="login-label login-login">
                             <label for="login-login" class="form__text-placeholder">Login</label>
                             <p class="form__text-error">Nieprawidłowy login</p>
                         </div>
 
                         <div class="form__text-input-container mb-3">
-                            <input id="password-login" type="password" class="form__text-input" placeholder=" " required aria-labelledby="login-label password-login">
+                            <input id="password-login" type="password" minlength="4" class="form__text-input" placeholder=" " required aria-labelledby="login-label password-login">
                             <button class="form__show-password-button" aria-label="pokaż hasło">
                                 <svg class="form__show-password-icon">
                                     <use xlink:href="dist/svg/svg.svg#eye" ></use>
@@ -172,13 +172,13 @@
                         <h2 class="form__header mb-30" id="register-label">Zarejestruj się</h2>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="login-register" type="text" class="form__text-input" placeholder=" " required aria-labelledby="register-label login-register">
+                            <input id="login-register" type="text" minlength="4" class="form__text-input" placeholder=" " required aria-labelledby="register-label login-register">
                             <label for="login-register" class="form__text-placeholder">Login</label>
                             <p class="form__text-error">Nieprawidłowy login</p>
                         </div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="password-register" type="password" class="form__text-input" placeholder=" " required aria-labelledby="register-label password-register">
+                            <input id="password-register" type="password" minlength="4" class="form__text-input" placeholder=" " required aria-labelledby="register-label password-register">
                             <button class="form__show-password-button" aria-label="pokaż hasło">
                                 <svg class="form__show-password-icon">
                                     <use xlink:href="dist/svg/svg.svg#eye" ></use>
@@ -191,13 +191,13 @@
                         <div class="form__line-separator mb-30"></div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="name" type="text" class="form__text-input" placeholder=" " required aria-labelledby="register-label name">
+                            <input id="name" type="text" minlength="4" class="form__text-input" placeholder=" " required aria-labelledby="register-label name">
                             <label for="name" class="form__text-placeholder">Imię i nazwisko</label>
                             <p class="form__text-error">Błędnie wypełnione pole</p>
                         </div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="e-mail" type="email" class="form__text-input" placeholder=" " required aria-labelledby="register-label e-mail">
+                            <input id="e-mail" type="email" minlength="4" class="form__text-input" placeholder=" " required aria-labelledby="register-label e-mail">
                             <label for="e-mail" class="form__text-placeholder">Adres e-mail</label>
                             <p class="form__text-error">Nieprawidłowy adres e-mail</p>
                         </div>
