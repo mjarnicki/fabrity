@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const body = document.querySelector('body')
-    const parent = document.querySelector('.header__container')
+    const parent = document.querySelector('.header__container');
+    const contrastIcon = document.querySelector('.contrast-icon')
     const hamburgerIcon = parent.querySelector('.hamburger__container');
 
     const mobileMenuContainer = parent.querySelector('.header__mobile-menu');
@@ -10,12 +11,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const desktopMenuContainer = parent.querySelector('.header__desktop-menu');
     const desktopMenuItem = desktopMenuContainer.querySelectorAll('.header__menu-item');
 
+      // toggle contrast
+      if(localStorage.contrast){
+        body.classList.add('contrast')
+      }
+
+      contrastIcon.addEventListener('click', () => {
+
+        if(localStorage.contrast){
+          body.classList.remove('contrast')
+          localStorage.setItem('contrast', '');
+        } else {
+          body.classList.add('contrast')
+          localStorage.setItem('contrast', true);
+        }
+      });
+
     // toggle HamburgerMenu events
     
     hamburgerIcon.addEventListener('click', () => {
       toggleMobileMenu()
-
-
     });
 
     // move to page section events for mobile
@@ -82,7 +97,7 @@ function scrollToPageSection(event, item, offset) {
 }
 
 function trapFocus(element) {
-  const focusableEls = element.querySelectorAll('a[href]:not([focus-trap-disabled]), button:not([focus-trap-disabled])');
+  const focusableEls = element.querySelectorAll('.focus-trap');
   const firstFocusableEl = focusableEls[0];  
   const lastFocusableEl = focusableEls[focusableEls.length - 1];
   const KEYCODE_TAB = 9;

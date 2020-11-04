@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // form navigation
-    for (let button of formContainer.querySelectorAll('.form-navigation')) {
+    for (let button of formContainer.querySelectorAll('[data-target]')) {
 
         const formNodeList = formContainer.children
         
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     formElement.classList.add('d-none')
                     formElement.classList.remove('form__validate')
     
-                    if(formElement.getAttribute('id') === button.getAttribute('id')){
+                    if(formElement.getAttribute('id') === button.getAttribute('data-target')){
                         formElement.classList.remove('d-none')
                         formElement.querySelectorAll('input, button')[0].focus()
                     }

@@ -120,6 +120,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border-top: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        border-radius: 0 20px 20px 0
     }
     &__header{
         font-size: rem-calc(36);

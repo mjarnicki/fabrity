@@ -39,6 +39,11 @@
         display: flex;
         align-items: center;
     }
+    &__contrast-icon{
+        width: 20px;
+        height: 12.5px;
+        transition: fill 0.3s ease-in-out;
+    }
     &__desktop-menu{
         margin: 0;
         height: 100%;
@@ -89,6 +94,10 @@
             color: $orange-dark;
             &:after{
                 opacity: 1;
+            }
+            .header__contrast-icon{
+                transition: fill .3s ease-in-out;
+                fill: $orange-dark
             }
         }
     }

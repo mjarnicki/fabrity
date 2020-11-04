@@ -1,0 +1,46 @@
+.contrast{
+    background-color: black;
+
+    a, button{
+        text-decoration: underline;
+    }
+    *{
+        color: yellow !important;
+        background-color: black !important;
+        border-color: yellow !important;
+        &:focus{
+            outline: 2px solid red;
+            & svg, & ~ svg, & + svg {
+                fill: white !important;
+            }
+        }
+    }
+    svg{
+        fill: white !important;
+    }
+
+    .publications__release-commas-icon{
+        filter: invert(100%) sepia(12%) saturate(2%) hue-rotate(70deg) brightness(107%) contrast(101%);
+        background-color: transparent !important;
+    }
+    .slider__dots-container{
+        background-color: transparent !important;
+    }
+    .form__checkbox-checkbox{
+        border: 1px solid yellow;
+    }
+    .form__button-primary{
+        background-color: yellow !important;
+        color: black !important;
+    }
+
+    .form__swich-checkbox, .form__checkbox-input{
+        &:focus{
+            outline: 0;
+            & + label{
+                outline: 1px solid red;
+            }
+        }
+    }
+
+}
