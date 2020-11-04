@@ -295,20 +295,24 @@
         top: 3px;
         left: 10px;
         &:checked{
-            & ~ .form__swich-icon{
-                background-color: $orange;
-                transition: background-color 0.2s ease-in-out;
-                &:after{
-                    content: '';
-                    left: 26px;
-                    transition: left 0.2s ease-in-out;
+            & ~ .form__swich-label{
+                .form__swich-icon{
+                    background-color: $orange;
+                    transition: background-color 0.2s ease-in-out;
+                    &:after{
+                        content: '';
+                        left: 26px;
+                        transition: left 0.2s ease-in-out;
+                    }
                 }
             }
         }
         &:hover, &:focus{
-            & ~ .form__swich-icon{
-                    border: 2px solid $orange;
-                    transition: border-color 0.2s ease-in-out;;
+            & ~ .form__swich-label{ 
+                    .form__swich-icon{
+                        border: 2px solid $orange;
+                        transition: border-color 0.2s ease-in-out;
+                    }
                 }
             }
     }
@@ -321,7 +325,8 @@
         border: 2px solid white;
         cursor: pointer;
         position: relative;
-
+        display: block;
+        margin-right: 14px;
         &:after{
             content: '';
             position: absolute;
@@ -338,7 +343,7 @@
     &__swich-label{
         cursor: pointer;
         font-size: rem-calc(14);
-        margin-left: 14px;
+        display: flex;
     }
 
     &__link{
@@ -370,21 +375,26 @@
         opacity: 0;
         transition: background-color .2s ease-in-out;
         &:focus{
-            & ~ .form__checkbox-checkbox{
-                background-color: $orange-dark;
-                transition: background-color .2s ease-in-out;
+            & ~ .form__checkbox-label {
+                .form__checkbox-checkbox{
+                    background-color: $orange-dark;
+                    transition: background-color .2s ease-in-out;
+                }
             }
         }
         &:checked{
-            & ~ .form__checkbox-checkbox:after{
+            & ~ .form__checkbox-label {
+                .form__checkbox-checkbox:after{
                 display: block;
-            }
+                }
+            }   
         }
     }
     &__checkbox-checkbox{
         background: $orange;
         border-radius: 5px;
         min-width: 20px;
+        display: block;
         height: 20px;
         margin: 8px 11px 0 0;
         transition: background-color .2s ease-in-out;
@@ -409,6 +419,7 @@
     }
     &__checkbox-label{
         cursor: pointer;
+        display: flex;
         margin: 0;
         &:hover{
             .form__checkbox-checkbox{

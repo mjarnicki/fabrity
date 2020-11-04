@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let item of mobileMenuItem) {
       item.addEventListener('click', event => {
         toggleMobileMenu();
-        scrollToPageSection(event, item, '-51px')
+        scrollToPageSection(event, item, 60)
       });
 
       item.addEventListener('keypress', event => {
         if(event.keyCode == 32 || event.keyCode == 13){
           toggleMobileMenu()
-          scrollToPageSection(event, item, '-51px')
+          scrollToPageSection(event, item, 60)
         } 
       });
     }
@@ -63,12 +63,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let item of desktopMenuItem) {
         item.addEventListener('click', event => {
-        scrollToPageSection(event, item, '-148px')
+        scrollToPageSection(event, item, 120)
+        console.log('adsfasdf');
       });
 
       item.addEventListener('keypress', event => {
         if(event.keyCode == 32 || event.keyCode == 13)
-        scrollToPageSection(event, item, '-148px')
+        scrollToPageSection(event, item, 120)
       });
     }
 
@@ -96,15 +97,16 @@ function scrollToPageSection(event, item, offset) {
 
   const targetId = item.getAttribute('href'); 
   const target = document.querySelector(targetId)
-  const pos = target.style.position;
-  const top = target.style.top;
 
-  target.style.position = 'relative';
-  target.style.top = offset;
-  target.scrollIntoView({ behavior: 'smooth'});
-  target.style.top = top;
-  target.style.position = pos;
-  target.querySelector('a, button').focus()
+  const offsetTop = target.offsetTop - offset
+  console.log(offsetTop);
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+
+  setTimeout(()=> target.querySelector('a, button').focus(), 600);
+
 }
 
 function trapFocus(element) {

@@ -20,7 +20,7 @@
         transition: margin 0.2s linear;
         @include media-breakpoint-down(md) {
             height: 51px;
-            margin: 0;
+            margin: 0 !important;
             padding: 15px 25px;
         }
         @include media-breakpoint-up(md) {
