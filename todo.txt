@@ -6,7 +6,6 @@
 +zoptymalizować zdjęcia
 +skończyć mobilkę (lista publikacji + przejżenie reszty)
 
--zrobić animacje przejścia do innej części formularza
--poszukać rozwiązania problemu z podwójnymi etykietami i z brakiem tekstu w etykietach
 
+--zrobić animacje przejścia do innej części formularza
 - uruchomić na IE 11

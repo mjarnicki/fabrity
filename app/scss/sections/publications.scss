@@ -45,10 +45,7 @@
         height: 145px;
         object-fit: cover;
         margin-bottom: 8px;
-        @include media-breakpoint-only(sm) {
-            height: 120px;
-        }
-        @include media-breakpoint-only(xm) {
+        @include media-breakpoint-down(sm) {
             height: 92px;
         }
         @include media-breakpoint-up(md) {

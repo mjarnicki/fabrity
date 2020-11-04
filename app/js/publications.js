@@ -85,7 +85,7 @@ function generatePublicationHTML(element, index){
     let parsedDate = `${date.getFullYear()}.${("0" + (date.getMonth() + 1)).slice(-2)}.${("0" + date.getDay()).slice(-2)} ${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}` 
     
     return `
-    <article class="publications__release container-fluid">
+    <article class="publications__release container">
         <div class="row">
             <div class="col-6 col-md-12 order-last order-md-first">
                 <div class="publications__release-header">
