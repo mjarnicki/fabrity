@@ -1,7 +1,11 @@
 +zrobić kasowanie pól po wysłaniu formularza
--zrobić animacje przejścia do innej części formularza
 +zamienić zdjęcie hashtag na SVG
++zrobić wersje kontrastową
++sprawdzić walidatorami i z czytnikiem
++zrobić focus na pierwszym klikalnym elemencie po odpaleniu nawigacji
+
 -poprawić wersję dla mobilki
--zrobić wersje kontrastową
--sprawdzić walidatorami i z czytnikiem
+-zrobić animacje przejścia do innej części formularza
 -zoptymalizować zdjęcia
+
+- uruchomić na IE 11

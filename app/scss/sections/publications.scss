@@ -34,13 +34,18 @@
         font-size: rem-calc(14);
         margin-bottom: 12px;
     }
-    &__teaser{
+    &__release-teaser{
         width: 100%;
         height: 145px;
         object-fit: cover;
         margin-bottom: 8px;
         &--big{
             height: 290px;
+        }
+    }
+    &__release-content{
+        a{
+            color: $orange-dark;
         }
     }
     &__loader{

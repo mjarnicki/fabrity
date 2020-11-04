@@ -66,5 +66,9 @@ function validateForm(event) {
     const formContainer = event.target.parentNode;
     const formValidity = formContainer.checkValidity();
 
-    formContainer.classList.add('form__validate')
+    if(!formValidity) {
+        formContainer.querySelector('input:invalid').focus()
+        formContainer.classList.add('form__validate')
+    }
+
 }

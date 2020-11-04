@@ -44,7 +44,7 @@
             <nav class="header__nav-container">
                 <ul class="header__desktop-menu d-none d-md-flex">
                     <li>
-                        <button class="header__menu-item contrast-icon" title="Zmień kolory witryny na mocno kontrastowe">
+                        <button class="header__contrast-button-icon contrast-icon" title="Zmień kolory witryny na mocno kontrastowe">
                             <svg class="header__contrast-icon">
                                 <use xlink:href="dist/svg/svg.svg#eye" ></use>
                             </svg>
@@ -114,16 +114,16 @@
                     </div>
                     <!-- LOGIN -->
                     <form id="login" class="flex-center d-none">
-                        <h2 class="form__header mb-5">Zaloguj się</h2>
+                        <h2 class="form__header mb-5" id="login-label">Zaloguj się</h2>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="login-login" type="text" class="form__text-input" placeholder=" "  required>
+                            <input id="login-login" type="text" class="form__text-input" placeholder=" "  required aria-labelledby="login-label login-login">
                             <label for="login-login" class="form__text-placeholder">Login</label>
                             <p class="form__text-error">Nieprawidłowy login</p>
                         </div>
 
                         <div class="form__text-input-container mb-3">
-                            <input id="password-login" type="password" class="form__text-input" placeholder=" " required>
+                            <input id="password-login" type="password" class="form__text-input" placeholder=" " required aria-labelledby="login-label password-login">
                             <button class="form__show-password-button" aria-label="pokaż hasło">
                                 <svg class="form__show-password-icon">
                                     <use xlink:href="dist/svg/svg.svg#eye" ></use>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="form__swich-container">
-                            <input class="form__swich-checkbox" type="checkbox" id="remember-session">
+                            <input class="form__swich-checkbox" type="checkbox" id="remember-session" aria-labelledby="login-label remember-session">
                             <label for="remember-session" class="form__swich-icon"></label>
                             <label for="remember-session" class="form__swich-label">Zapamiętaj moją sesje</p>
                         </div>
@@ -143,25 +143,25 @@
                             Dalej
                         </button>
 
-                        <button class="form__link" data-target="register">Nie mam konta</button>
+                        <button class="form__link" aria-label="przejdź do okna rejestracji" data-target="register">Nie mam konta</button>
                     </form>
                     <!-- LOGIN CONFIRMED -->
                     <div id="login-confirmed" class="flex-center d-none">
                         <h2 class="form__header">Gratuluję, zalogowałeś się!</h2>
-                        <button class="form__link" data-target="choose">Powrót</button>
+                        <button class="form__link" aria-label="Gratuluję, zalogowałeś się. Wciśnij enter aby wrócić do okna wyboru." data-target="choose">Powrót</button>
                     </div>
                     <!-- REGISTER -->
                     <form id="register" class="flex-center d-none" >
-                        <h2 class="form__header mb-30">Zarejestruj się</h2>
+                        <h2 class="form__header mb-30" id="register-label">Zarejestruj się</h2>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="login-register" type="text" class="form__text-input" placeholder=" " required>
+                            <input id="login-register" type="text" class="form__text-input" placeholder=" " required aria-labelledby="register-label login-register">
                             <label for="login-register" class="form__text-placeholder">Login</label>
                             <p class="form__text-error">Nieprawidłowy login</p>
                         </div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="password-register" type="password" class="form__text-input" placeholder=" " required>
+                            <input id="password-register" type="password" class="form__text-input" placeholder=" " required aria-labelledby="register-label password-register">
                             <button class="form__show-password-button" aria-label="pokaż hasło">
                                 <svg class="form__show-password-icon">
                                     <use xlink:href="dist/svg/svg.svg#eye" ></use>
@@ -174,19 +174,19 @@
                         <div class="form__line-separator mb-30"></div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="name" type="text" class="form__text-input" placeholder=" " required>
+                            <input id="name" type="text" class="form__text-input" placeholder=" " required aria-labelledby="register-label name">
                             <label for="name" class="form__text-placeholder">Imię i nazwisko</label>
                             <p class="form__text-error">Błędnie wypełnione pole</p>
                         </div>
 
                         <div class="form__text-input-container mb-30">
-                            <input id="e-main" type="email" class="form__text-input" placeholder=" " required>
-                            <label for="e-main" class="form__text-placeholder">Adres e-mail</label>
+                            <input id="e-mail" type="email" class="form__text-input" placeholder=" " required aria-labelledby="register-label e-mail">
+                            <label for="e-mail" class="form__text-placeholder">Adres e-mail</label>
                             <p class="form__text-error">Nieprawidłowy adres e-mail</p>
                         </div>
 
                         <div class="form__checkbox-container">
-                            <input id="agree" type="checkbox" class="form__checkbox-input" required> 
+                            <input id="agree" type="checkbox" class="form__checkbox-input" required aria-labelledby="register-label agree"> 
                             <label for="agree" class="form__checkbox-checkbox"></label>
                             <label for="agree" class="form__checkbox-label">Wyrażam zgodę na lorem ipsum lorem ipsum</label>
                             <p class="form__text-error">Pole wymagane</p>
@@ -196,12 +196,12 @@
                             Załóż konto
                         </button>
 
-                        <button class="form__link" data-target="login">Chcę się zalogować</button>
+                        <button class="form__link" aria-label="przejdź do okna logowania" data-target="login">Chcę się zalogować</button>
                     </form>
                     <!-- REGISTER CONFIRMED -->
                     <div id="register-confirmed" class="flex-center d-none">
                         <h2 class="form__header">Gratuluję, konto zostało utworzone!</h2>
-                        <button class="form__link" data-target="choose">Powrót</button>
+                        <button class="form__link" aria-label="Gratuluję, zarejestrowałeś się. Wciśnij enter aby wrócić do okna wyboru." data-target="choose">Powrót</button>
                     </div>
                 </div>
             </div>

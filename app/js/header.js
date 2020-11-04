@@ -27,6 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
 
+      // header shrink
+
+      window.addEventListener('scroll', ()=>{
+        console.log(window.pageYOffset);
+        if(window.pageYOffset > 80) {
+          parent.classList.add('header__container--shrink')
+        } else if (window.pageYOffset <= 80){
+          parent.classList.remove('header__container--shrink')
+        }
+      })
+
     // toggle HamburgerMenu events
     
     hamburgerIcon.addEventListener('click', () => {
@@ -94,6 +105,7 @@ function scrollToPageSection(event, item, offset) {
   target.scrollIntoView({ behavior: 'smooth'});
   target.style.top = top;
   target.style.position = pos;
+  target.querySelector('a, button').focus()
 }
 
 function trapFocus(element) {
