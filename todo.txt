@@ -7,5 +7,6 @@
 -poprawić wersję dla mobilki
 -zrobić animacje przejścia do innej części formularza
 -zoptymalizować zdjęcia
+-poszukać rozwiązania problemu z podwójnymi etykietami i z brakiem tekstu w etykietach
 
 - uruchomić na IE 11

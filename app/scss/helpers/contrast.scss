@@ -34,6 +34,10 @@
         color: black !important;
     }
 
+    .hamburger__line{
+        background-color: yellow !important;
+    }
+
     .form__swich-checkbox, .form__checkbox-input{
         &:focus{
             outline: 0;

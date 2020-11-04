@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
       // header shrink
 
       window.addEventListener('scroll', ()=>{
-        console.log(window.pageYOffset);
         if(window.pageYOffset > 80) {
           parent.classList.add('header__container--shrink')
         } else if (window.pageYOffset <= 80){

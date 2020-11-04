@@ -88,7 +88,7 @@ function generatePublicationHTML(element, index){
     <article class="publications__release">
         <div class="publications__release-header">
             <img src="dist/images/comas.svg" class="publications__release-commas-icon" alt="ikona">
-            <h2 class="publications__release-title ${(index == 0 || index == 1) ? 'mb-4' : ''}">
+            <h2 class="publications__release-title ${(index == 0 || index == 1) ? 'mb-2 mb-md-4' : ''}">
                 ${element.title}
             </h2>
         </div>

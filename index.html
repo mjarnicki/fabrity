@@ -37,19 +37,17 @@
                 <svg class="header__tag-icon">
                     <use xlink:href="dist/svg/svg.svg#tag"></use>
                 </svg>
-                <span class="d-none d-md-block ml-2">
+                <span class="d-none d-lg-block ml-2">
                     Front-end
                 </span>
             </h1>
             <nav class="header__nav-container">
-                <ul class="header__desktop-menu d-none d-md-flex">
-                    <li>
-                        <button class="header__contrast-button-icon contrast-icon" title="Zmień kolory witryny na mocno kontrastowe">
-                            <svg class="header__contrast-icon">
-                                <use xlink:href="dist/svg/svg.svg#eye" ></use>
-                            </svg>
-                        </button> 
-                    </li>
+                <button class="header__contrast-button-icon contrast-icon" title="Zmień kolory witryny na mocno kontrastowe">
+                    <svg class="header__contrast-icon">
+                        <use xlink:href="dist/svg/svg.svg#eye" ></use>
+                    </svg>
+                </button> 
+                <ul class="header__desktop-menu d-none d-lg-flex">
                     <li>
                         <a href="#news" class="header__menu-item" title="Przejdź do wiadomości">
                             Wiadomości
@@ -61,14 +59,14 @@
                         </a>
                     </li>
                 </ul>
-                <button class="hamburger__container d-md-none focus-trap">
+                <button class="hamburger__container d-lg-none focus-trap" aria-level="przycisk menu dla urządzeń mobilnych">
                     <span class="hamburger__line hamburger__line--1"></span>
                     <span class="hamburger__line hamburger__line--2"></span>
                     <span class="hamburger__line hamburger__line--3"></span>
                 </button>
 
             </nav>
-            <ul class="header__mobile-menu d-md-none">
+            <ul class="header__mobile-menu d-lg-none">
                 <li class="mb-5">
                     <a href="#news" class="header__menu-item ml-0 focus-trap" tabindex="-1" title="Przejdź do wiadomości">
                         Wiadomości
@@ -86,20 +84,27 @@
     <main>
         <section class="slider-form__container">
             <div class="slider-form row">
-                <div class="col-12 col-md-6 slider__container">
+                <div class="col-12 col-lg-6 slider__container">
                     <button class="slider__toggle-autoplay" aria-label="zatrzymaj slider">
                         <span class="slider__toggle-autoplay--pause"></span>
                         <span class="slider__toggle-autoplay--play d-none"></span>
                     </button>
-                    <img class="slider__img" src="dist/images/slide-1.png" alt="robot">
+
+                    <picture>
+                        <source media="(min-width:992px)" srcset="dist/images/slide-1-desktop.png">
+                        <source media="(max-width:766px) and (min-width:576px)" srcset="dist/images/slide-1-tablet.png">
+                        <source media="(max-width:575px)" srcset="dist/images/slide-1-mobile.png">
+                        <img class="slider__img" src="dist/images/slide-1-desktop.png" alt="robot">
+                    </picture>
+
                     <img class="slider__img" src="dist/images/slide-2.jpg" alt="górska dolina">
                     <img class="slider__img" src="dist/images/slide-3.jpg" alt="most we mgle">
                     <ul class="slider__dots-container">
                     </ul>
                 </div>
-                <div class="col-12 col-md-6 form__container">
+                <div class="col-12 col-lg-6 form__container">
                     <!-- CHOOSE -->
-                    <div id="choose" class="flex-center mt-2 ">
+                    <div id="choose" class="flex-center my-lg-0 my-5 mt-2">
                         <h2 class="form__header mb-5">Dzień dobry</h2>
 
                         <button class="form__button-primary" data-target="login">
@@ -113,7 +118,7 @@
                         </button>
                     </div>
                     <!-- LOGIN -->
-                    <form id="login" class="flex-center d-none">
+                    <form id="login" class="flex-center my-lg-0 my-5 d-none">
                         <h2 class="form__header mb-5" id="login-label">Zaloguj się</h2>
 
                         <div class="form__text-input-container mb-30">
@@ -146,12 +151,12 @@
                         <button class="form__link" aria-label="przejdź do okna rejestracji" data-target="register">Nie mam konta</button>
                     </form>
                     <!-- LOGIN CONFIRMED -->
-                    <div id="login-confirmed" class="flex-center d-none">
+                    <div id="login-confirmed" class="flex-center my-md-0 my-5 d-none">
                         <h2 class="form__header">Gratuluję, zalogowałeś się!</h2>
                         <button class="form__link" aria-label="Gratuluję, zalogowałeś się. Wciśnij enter aby wrócić do okna wyboru." data-target="choose">Powrót</button>
                     </div>
                     <!-- REGISTER -->
-                    <form id="register" class="flex-center d-none" >
+                    <form id="register" class="flex-center my-lg-0 my-5 d-none" >
                         <h2 class="form__header mb-30" id="register-label">Zarejestruj się</h2>
 
                         <div class="form__text-input-container mb-30">
@@ -199,7 +204,7 @@
                         <button class="form__link" aria-label="przejdź do okna logowania" data-target="login">Chcę się zalogować</button>
                     </form>
                     <!-- REGISTER CONFIRMED -->
-                    <div id="register-confirmed" class="flex-center d-none">
+                    <div id="register-confirmed" class="flex-center my-md-0 my-5 d-none">
                         <h2 class="form__header">Gratuluję, konto zostało utworzone!</h2>
                         <button class="form__link" aria-label="Gratuluję, zarejestrowałeś się. Wciśnij enter aby wrócić do okna wyboru." data-target="choose">Powrót</button>
                     </div>
