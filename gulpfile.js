@@ -17,8 +17,7 @@ const gulp = require('gulp'),
 gulp.task('css', () => {
   return gulp.src('app/scss/global.scss')
     .pipe(sass())
-    // css nano commented for debugging
-    // .pipe(cssnano())
+    .pipe(cssnano())
     .pipe(concat('styles.css'))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('dist/css'))
@@ -29,7 +28,6 @@ gulp.task('script', () => {
   return gulp.src('app/js/**/*.js')
       .pipe(plumber())
       .pipe(babel({
-          // presets: ["@babel/preset-env"]
           presets: [
               ["@babel/preset-env", {
                 useBuiltIns: "entry",
@@ -38,8 +36,8 @@ gulp.task('script', () => {
           ]
       }))
       .pipe(concat('scripts.js'))
-    // css uglify commented for debugging
-      .pipe(uglify())
+    // uglify commented for debugging
+      // .pipe(uglify())
       .pipe(gulp.dest('dist/js'))
       .pipe(browserSync.stream());
 });

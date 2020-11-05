@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let item of desktopMenuItem) {
         item.addEventListener('click', event => {
         scrollToPageSection(event, item, 120)
-        console.log('adsfasdf');
       });
 
       item.addEventListener('keypress', event => {
@@ -98,14 +97,15 @@ function scrollToPageSection(event, item, offset) {
   const targetId = item.getAttribute('href'); 
   const target = document.querySelector(targetId)
 
+
   const offsetTop = target.offsetTop - offset
-  console.log(offsetTop);
-  scroll({
+
+  window.scrollTo({
     top: offsetTop,
     behavior: "smooth"
   });
 
-  setTimeout(()=> target.querySelector('a, button').focus(), 600);
+  setTimeout(()=> target.querySelector('a, button').focus(), 800);
 
 }
 
