@@ -2,14 +2,15 @@
 ## Środowisko
 
 Poza babelizacją plików JS, aby zwiększyć wydajność witryny, łączę pliki SVG w jeden plik, optymalizuje zdjęcia oraz minifikuję plik CSS. 
-Żeby projekt był bardziej czytelny, podzieliłem style i skrypty na osobne pliki SCSSi js, które produkcyjnie łączone są w pojedyncze pliki. 
+Żeby projekt był bardziej czytelny, podzieliłem style i skrypty na osobne pliki SCSS i js, które produkcyjnie łączone są w pojedyncze pliki. 
+Nie minifikowałem JS, żeby łatwiej się debugowało. 
 Sprawdziłem działanie strony na chrome, operze, firefox i edge. Na safari nie miałem jak sprawdzić. Niestety na dostosowanie kodu do IE11 zabrakło mi czasu. 
 
 W celu uruchomienia projektu lokalnie należy po zainstalowaniu zależności uruchomić **gulp dist** a następnie **gulp** 
 
 ## Funkcjonalności
 
-Do funkcjonalności opisanych w zadaniu dodałam kilka swoich, min. górne menu przyklejone do krawędzi przeglądarki, kurczące się po zjechaniu niżej.
+Do funkcjonalności opisanych w zadaniu dodałem kilka swoich, min. górne menu przyklejone do krawędzi przeglądarki, kurczące się po zjechaniu niżej, oraz smooth scroll.
 
 ### Slider
 
